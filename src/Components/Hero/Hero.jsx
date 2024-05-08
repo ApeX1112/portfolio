@@ -15,7 +15,7 @@ const Hero = () => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    // Clear previous timeouts and intervals
+    
     const intervalId = setInterval(() => {
       if (index < text.length) {
         setDisplayText(displayText => displayText + text[index]);
@@ -29,9 +29,9 @@ const Hero = () => {
           else return text1;
         })
 
-         // Stop the interval when all letters are displayed
+         
       }
-    }, 500); // Display each letter after 500ms
+    }, 400); // Display each letter after 500ms
 
     return () => clearInterval(intervalId); // Cleanup interval on component unmount
   }, [index, text]); 
@@ -40,8 +40,8 @@ const Hero = () => {
         <div className='content'>
             <h2 className='Title'>{displayText}</h2>
             
-            <span className='descr'>{text2}</span>
-            <a className='contact'>contasct me!</a>
+          
+            <a className='contact'>contact me!</a>
         </div>
         <img src={getImageUrl("hero/heroImage.png")} className='heroimg'>
         </img>
