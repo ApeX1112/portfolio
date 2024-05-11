@@ -1,23 +1,35 @@
-import React,{useRef,useEffect} from 'react'
+import React,{useRef,useEffect, useState} from 'react'
 import './Projects.css'
+import {getImageUrl} from '../../utils'
 
 
 const Projects = () => {
+    const [onproj,setonproj]=useState(false)
+    const [selectedid,setselectedid]=useState(null)
+    
     const cardData = [
-        { title: "Card 1", content: "This is the content for Card 1." },
-        { title: "Card 2", content: "This is the content for Card 2." },
-        { title: "Card 3", content: "This is the content for Card 3." },
-        { title: "Card 1", content: "This is the content for Card 1." },
-        { title: "Card 2", content: "This is the content for Card 2." },
-        { title: "Card 3", content: "This is the content for Card 3." },
-        { title: "Card 1", content: "This is the content for Card 1." },
-        { title: "Card 2", content: "This is the content for Card 2." },
-        { title: "Card 3", content: "This is the content for Card 3." },
+        { id:1,title: "Card 1", content: "This is the content for Card 1." },
+        { id:2,title: "Card 2", content: "This is the content for Card 2." },
+        { id:3,title: "Card 3", content: "This is the content for Card 3." },
+        { id:4,title: "Card 1", content: "This is the content for Card 1." },
+        { id:5,title: "Card 2", content: "This is the content for Card 2." },
+        { id:6,title: "Card 3", content: "This is the content for Card 3." },
+        { id:7,title: "Card 1", content: "This is the content for Card 1." },
+        { id:8,title: "Card 2", content: "This is the content for Card 2." },
+        { id:9,title: "Card 3", content: "This is the content for Card 3." },
       ];
+
+      function handleprojectclick(id){
+        setselectedid(id);
+        setonproj(true);
+        
+      }
 
       
 
       return (
+        <>
+        <div>
         <div  className='projects-container'>
           <h1 className='projects-title'>My projects</h1>
           <div className='grid'>
@@ -25,7 +37,7 @@ const Projects = () => {
           {cardData.map((project)=>{
             return (
             <>
-              <div className='card'>
+              <div className='card' onClick={()=>handleprojectclick(project.id)}>
               <h1 className='project-title'>{project.title}</h1>
               
               <p className='project-content'>{project.content}</p>
@@ -34,7 +46,16 @@ const Projects = () => {
             )
           })}
           </div>
+          
         </div>
+        {onproj && (
+          <div className='panel'>
+            <img className='img' src={getImageUrl("nav/closeIcon.png")} onClick={()=>setonproj(false)}></img>
+            <section></section>
+          </div>
+        )}
+        </div>
+        </>
       );
 }
 
