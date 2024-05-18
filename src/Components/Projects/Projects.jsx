@@ -14,15 +14,23 @@ const Projects = () => {
         { id:4,title: "Card 1", content: "This is the content for Card 1." },
         { id:5,title: "Card 2", content: "This is the content for Card 2." },
         { id:6,title: "Card 3", content: "This is the content for Card 3." },
-        { id:7,title: "Card 1", content: "This is the content for Card 1." },
-        { id:8,title: "Card 2", content: "This is the content for Card 2." },
-        { id:9,title: "Card 3", content: "This is the content for Card 3." },
+        
       ];
 
       function handleprojectclick(id){
         setselectedid(id);
         setonproj(true);
         
+      }
+
+      const ProjectDetails=({project})=>{
+
+        return (
+          <>
+          
+          
+          </>
+        )
       }
 
       
@@ -51,6 +59,7 @@ const Projects = () => {
         {onproj && (
           <div className='panel'>
             <img className='img' src={getImageUrl("nav/closeIcon.png")} onClick={()=>setonproj(false)}></img>
+            <h1 className='panel-project-title'> {cardData.find((element)=>element.id===selectedid).title}</h1>
             <section></section>
           </div>
         )}
