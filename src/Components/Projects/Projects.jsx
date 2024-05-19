@@ -1,71 +1,115 @@
-import React,{useRef,useEffect, useState} from 'react'
-import './Projects.css'
-import {getImageUrl} from '../../utils'
-
+import React, { useState } from 'react';
+import './Projects.css';
+import { getImageUrl } from '../../utils';
 
 const Projects = () => {
-    const [onproj,setonproj]=useState(false)
-    const [selectedid,setselectedid]=useState(null)
-    
-    const cardData = [
-        { id:1,title: "Card 1", content: "This is the content for Card 1." },
-        { id:2,title: "Card 2", content: "This is the content for Card 2." },
-        { id:3,title: "Card 3", content: "This is the content for Card 3." },
-        { id:4,title: "Card 1", content: "This is the content for Card 1." },
-        { id:5,title: "Card 2", content: "This is the content for Card 2." },
-        { id:6,title: "Card 3", content: "This is the content for Card 3." },
+  const [onproj, setonproj] = useState(false);
+  const [selectedid, setselectedid] = useState(null);
+
+  const cardData = [
+    {
+      id: 1,
+      title: "Casa Blanca Times",
+      content: "Casa Blanca Times is a responsive Moroccan news website that uses web scraping to gather news from other websites daily. It is developed using Django for the backend and HTML, CSS, and JavaScript for the frontend.",
+      images: ['projects/project1/1.png', 'projects/project1/2.png','projects/project1/3.png', 'projects/project1/4.png'] ,
+      git_url:'https://github.com/ApeX1112/-casabtimes.com-',
+    },
+    {
+      id: 2,
+      title: "Card 2",
+      content: "This is the content for Card 2.",
+      images: ['projects/project1.png', 'projects/project2.png'],
+      git_url:'',
+    },
+    {
+      id: 3,
+      title: "Card 3",
+      content: "This is the content for Card 3.",
+      images: ['projects/project1.png'],
+      git_url:'',
+    }
+  ];
+
+  function handleprojectclick(id) {
+    setselectedid(id);
+    setonproj(true);
+  }
+
+  const ProjectDetails = ({ project }) => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    const scrollLeft = () => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex > 0 ? prevIndex - 1 : project.images.length - 1
+      );
+    };
+
+    const scrollRight = () => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex < project.images.length-1 ? prevIndex + 1 : 0
+      );
+    };
+
+    return (
+      <>
+        <a href={project.git_url}>
+        <img  className='giticon' src={getImageUrl("contact/githubIcon.png")} />
+        </a>
+
+        <h1 className='panel-project-title'>{project.title}</h1>
+        <section>
+          <p className='project-content'>{project.content}</p>
+        </section>
+        <div className="image-carousel">
+          <button className="arrow arrow-left" onClick={scrollLeft}>‹</button>
+          <div className="image-wrapper" style={{ transform: `translateX(-${(currentImageIndex) * 1150}px)` }}>
+            {project.images.map((image, index) => (
+              <img
+                key={index}
+                src={getImageUrl(image)}
+                alt={`Project image ${index + 1}`}
+              />
+            ))}
+          </div>
+          <button className="arrow arrow-right" onClick={scrollRight}>›</button>
+        </div>
         
-      ];
+      </>
+    );
+  };
 
-      function handleprojectclick(id){
-        setselectedid(id);
-        setonproj(true);
-        
-      }
-
-      const ProjectDetails=({project})=>{
-
-        return (
-          <>
-          
-          
-          </>
-        )
-      }
-
-      
-
-      return (
-        <>
-        <div>
-        <div  className='projects-container'>
+  return (
+    <>
+      <div>
+        <div className='projects-container'>
           <h1 className='projects-title'>My projects</h1>
           <div className='grid'>
-          
-          {cardData.map((project)=>{
-            return (
-            <>
-              <div className='card' onClick={()=>handleprojectclick(project.id)}>
-              <h1 className='project-title'>{project.title}</h1>
-              
-              <p className='project-content'>{project.content}</p>
+            {cardData.map((project) => (
+              <div className='card' key={project.id} onClick={() => handleprojectclick(project.id)}>
+                <h1 className='project-title'>{project.title}</h1>
+                <p className='project-content'>{project.content}</p>
               </div>
-            </>
-            )
-          })}
+            ))}
           </div>
-          
         </div>
         {onproj && (
+          <>
           <div className='panel'>
-            <img className='img' src={getImageUrl("nav/closeIcon.png")} onClick={()=>setonproj(false)}></img>
-            <h1 className='panel-project-title'> {cardData.find((element)=>element.id===selectedid).title}</h1>
-            <section></section>
+            <img
+              className='closeimg'
+              src={getImageUrl("nav/closeIcon.png")}
+              onClick={() => setonproj(false)}
+              alt="Close"
+            />
+            <div className='pan'>
+            <ProjectDetails project={cardData.find((element) => element.id === selectedid)} />
+            </div>
           </div>
+          </>
         )}
-        </div>
-        </>
-      );
-}
+      </div>
+    </>
+  );
+};
 
-export default Projects
+export default Projects;
