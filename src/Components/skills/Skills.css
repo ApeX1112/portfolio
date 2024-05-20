@@ -56,3 +56,28 @@
         transform: translateX(-180%);
     }
 }
+
+.skills_icons img {
+    width: 80px; /* Adjust as needed */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+.skills_icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 70px;
+    list-style: none;
+    padding: 0;
+    margin-top: 100px;
+  }
+.skills_icons li img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+  }
+  
+  .skills_icons li img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgb(255, 255, 255);
+  }
+  
+  

@@ -7,6 +7,7 @@ import Hero from './Components/Hero/Hero'
 import About from './Components/About/About'
 import Skills from './Components/skills/Skills'
 import Projects from './Components/Projects/Projects'
+import { getImageUrl } from './utils';
 
 
 function App() {
@@ -53,6 +54,12 @@ function App() {
         <Projects></Projects>
 
         <section ref={contactRef} className='contact-section'>
+          <a href='https://www.linkedin.com/in/mohamed-moustache-452421285/'>
+          <img src={getImageUrl("contact/linkedinIcon.png")}/>
+          </a>
+          <a href='https://github.com/ApeX1112'>
+          <img src={getImageUrl("contact/githubIcon.png")}/>
+          </a>
         <h2 className='contact-title'>Contact Me</h2>
         <form onSubmit={sendEmail}>
           <label className='subtitle' htmlFor="from_name">Name:</label>

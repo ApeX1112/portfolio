@@ -203,7 +203,7 @@
   .panel {
     width: 90%;
     left: 5%;
-    height: 600px;
+    
   }
 
   .grid{
@@ -237,7 +237,7 @@
   .panel {
     width: 95%;
     left: 2.5%;
-    height: 500px;
+    
     top: 60px;
   }
 
@@ -249,7 +249,7 @@
   .panel {
     width: 100%;
     left: 0;
-    height: 400px;
+    
     top: 50px;
   }
 
