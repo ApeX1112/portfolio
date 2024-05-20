@@ -16,17 +16,17 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Card 2",
-      content: "This is the content for Card 2.",
-      images: ['projects/project1.png', 'projects/project2.png'],
-      git_url:'',
+      title: "Image Map",
+      content: "It's a design website that allows users to turn images into responsive ones, as well as design and draw shapes. It is built using React.js and Konva.js.",
+      images: ['projects/project2/1.png', 'projects/project2/2.png','projects/project2/3.png', 'projects/project2/4.png'] ,
+      git_url:'https://github.com/ApeX1112/IMGMAP',
     },
     {
       id: 3,
-      title: "Card 3",
-      content: "This is the content for Card 3.",
-      images: ['projects/project1.png'],
-      git_url:'',
+      title: "fitness track",
+      content: "A fitness app developed with Kivy and SQL to track daily fitness routines.",
+      images: ['projects/project3/1.png', 'projects/project3/2.png','projects/project3/3.png', 'projects/project3/4.png'] ,
+      git_url:'https://github.com/ApeX1112/gym-tracking-app',
     }
   ];
 
@@ -57,7 +57,7 @@ const Projects = () => {
         </a>
 
         <h1 className='panel-project-title'>{project.title}</h1>
-        <section>
+        <section className='content-section'>
           <p className='project-content'>{project.content}</p>
         </section>
         <div className="image-carousel">
@@ -87,7 +87,7 @@ const Projects = () => {
             {cardData.map((project) => (
               <div className='card' key={project.id} onClick={() => handleprojectclick(project.id)}>
                 <h1 className='project-title'>{project.title}</h1>
-                <p className='project-content'>{project.content}</p>
+                <p className='project-content1'>{project.content}</p>
               </div>
             ))}
           </div>
