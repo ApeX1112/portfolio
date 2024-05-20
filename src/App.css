@@ -9,8 +9,30 @@
 
 /* App.css */
 .contact-section {
-  padding: 20px;
-  background-color: #f0f0f0;
+  position: relative;
+  background-color: rgba(12,12,12,0.6);
+  border-radius: 15px;
+  padding:73px;
+  margin-top: 129px;
+  z-index: 1;
+  margin-left: 10%;
+  margin-right: 10%;
+  overflow: hidden;
+}
+
+.contact-title{
+  color:#fff;
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 1.75px;
+  text-transform: uppercase;
+}
+.subtitle{
+  color: #fff;
+  font-size: 25px;
+  word-wrap:none;
+  
+  white-space: nowrap;
 }
 
 .contact-section form {

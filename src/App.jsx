@@ -53,13 +53,13 @@ function App() {
         <Projects></Projects>
 
         <section ref={contactRef} className='contact-section'>
-        <h2>Contact Me</h2>
+        <h2 className='contact-title'>Contact Me</h2>
         <form onSubmit={sendEmail}>
-          <label htmlFor="from_name">Name:</label>
+          <label className='subtitle' htmlFor="from_name">Name:</label>
           <input type="text" id="from_name" name="from_name" required />
           
           
-          <label htmlFor="message">Message:</label>
+          <label className='subtitle'htmlFor="message">Message:</label>
           <textarea id="message" name="message" required></textarea>
           <button type="submit">Send</button>
         </form>
