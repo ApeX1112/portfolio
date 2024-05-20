@@ -210,8 +210,21 @@
     grid-template-columns:repeat(2,1fr);
   }
 
+
+
   .image-wrapper{
-    margin-left: 4000px;
+    margin-left: 3500px;
+  }
+  .image-wrapper img {
+    transform: scale(1,1);
+  }
+
+  .arrow-left{
+    left: 50px;
+  }
+
+  .arrow-right{
+    right: -8px;
   }
 
   
@@ -242,6 +255,21 @@
 
   .grid{
     grid-template-columns:repeat(1,1fr);
+  }
+  .image-wrapper{
+    margin-left: 3270px;
+  }
+
+  .image-wrapper img {
+    transform: scale(0.7,0.7);
+  }
+
+  .arrow-left{
+    left: 50px;
+  }
+
+  .arrow-right{
+    left: 370px;
   }
   
 
