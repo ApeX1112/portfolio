@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useRef } from 'react'
 import './Hero.css'
 import { getImageUrl } from '../../utils'
 
@@ -9,7 +9,7 @@ const text2="welcome to my portfolio"
 
 
 
-const Hero = () => {
+const Hero = ({scrollToContact}) => {
   const [text,settext]=useState(text1)
   const [displayText, setDisplayText] = useState('');
   const [index, setIndex] = useState(0);
@@ -41,7 +41,7 @@ const Hero = () => {
             <h2 className='Title'>{displayText}</h2>
             
           
-            <a className='contact'>contact me!</a>
+            <a className='contact' onClick={scrollToContact}>contact me!</a>
         </div>
         <img src={getImageUrl("hero/heroImage.png")} className='heroimg'>
         </img>

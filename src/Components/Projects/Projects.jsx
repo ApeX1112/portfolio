@@ -23,11 +23,18 @@ const Projects = () => {
       git_url:'https://github.com/ApeX1112/IMGMAP',
     },
     {
+      id: 5,
+      title: "Tanmirt",
+      content: "Tanmirt is a django website  to post lost or found items and help others find them (still in progress).",
+      images: ['projects/project5/1.png', 'projects/project5/2.png','projects/project5/3.png','projects/project5/4.png'] ,
+      git_url:'https://github.com/ApeX1112/AmazonScrap',
+    },
+    {
       id: 4,
       title: "amazon prices tracking website",
-      content: "A fitness app developed with Kivy and SQL to track daily fitness routines.",
+      content: "A website to scrape and track Amazon prices, developed with Django (still in progress).",
       images: ['projects/project4/1.png', 'projects/project4/2.png','projects/project4/3.png','projects/project4/4.png'] ,
-      git_url:'https://github.com/ApeX1112/gym-tracking-app',
+      git_url:'https://github.com/ApeX1112/AmazonScrap',
     },
 
     {
