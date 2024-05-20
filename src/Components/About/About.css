@@ -31,6 +31,25 @@
 
 }
 
+.desc{
+    color: #fff;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 20px;
+    text-indent: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    line-height: 35px;
+    word-spacing: 4px;
+}
+
+.interests{
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+
 @keyframes floating {
     0% {
         transform: translate(0,0px);
