@@ -138,6 +138,8 @@
 .image-wrapper img {
   width: 650px;
   max-height: 500px;
+  cursor: pointer;
+  transform: scale(1.5,1.5);
   
   
   
@@ -145,6 +147,7 @@
   
   
 }
+
 
 .arrow {
   position: absolute;
@@ -183,13 +186,13 @@
   padding: 10px;
   border: 1px solid white;
   border-radius: 20px;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.39);
   z-index: 1001;
   position: relative;
 }
 
 .content-section{
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.897);
   z-index: 1000;
 }
 

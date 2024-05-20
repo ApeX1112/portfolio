@@ -5,6 +5,7 @@ import { getImageUrl } from '../../utils';
 const Projects = () => {
   const [onproj, setonproj] = useState(false);
   const [selectedid, setselectedid] = useState(null);
+  const [expandedImage, setExpandedImage] = useState(null);
 
   const cardData = [
     {
@@ -21,6 +22,14 @@ const Projects = () => {
       images: ['projects/project2/1.png', 'projects/project2/2.png','projects/project2/3.png', 'projects/project2/4.png'] ,
       git_url:'https://github.com/ApeX1112/IMGMAP',
     },
+    {
+      id: 4,
+      title: "amazon prices tracking website",
+      content: "A fitness app developed with Kivy and SQL to track daily fitness routines.",
+      images: ['projects/project4/1.png', 'projects/project4/2.png','projects/project4/3.png','projects/project4/4.png'] ,
+      git_url:'https://github.com/ApeX1112/gym-tracking-app',
+    },
+
     {
       id: 3,
       title: "fitness track",
