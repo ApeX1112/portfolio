@@ -205,6 +205,15 @@
     left: 5%;
     height: 600px;
   }
+
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .image-wrapper{
+    margin-left: 4000px;
+  }
+
   
   
 
@@ -220,15 +229,21 @@
   }
 
   
+  
 }
 
-@media (max-width: 480px) {
+@media (max-width: 610px) {
   .panel {
     width: 100%;
     left: 0;
     height: 400px;
     top: 50px;
   }
+
+  .grid{
+    grid-template-columns:repeat(1,1fr);
+  }
+  
 
   
 }

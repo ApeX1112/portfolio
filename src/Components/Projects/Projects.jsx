@@ -27,7 +27,7 @@ const Projects = () => {
       title: "Tanmirt",
       content: "Tanmirt is a django website  to post lost or found items and help others find them (still in progress).",
       images: ['projects/project5/1.png', 'projects/project5/2.png','projects/project5/3.png','projects/project5/4.png'] ,
-      git_url:'https://github.com/ApeX1112/AmazonScrap',
+      git_url:'https://github.com/ApeX1112/tanmirt-',
     },
     {
       id: 4,
